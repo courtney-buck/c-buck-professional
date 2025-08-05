@@ -5,7 +5,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://courtneybuck.com'),
+  metadataBase: new URL(process.env.NODE_ENV === 'production' 
+    ? 'https://courtney-buck.github.io/c-buck-professional' 
+    : 'http://localhost:3000'),
   title: 'Courtney Buck - Generalist',
   description: 'Professional generalist bridging gaps across domains with adaptable solutions for complex challenges.',
   keywords: ['generalist', 'problem solver', 'consultant', 'strategist'],
