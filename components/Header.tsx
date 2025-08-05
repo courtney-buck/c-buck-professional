@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false)
@@ -27,10 +26,8 @@ export default function Header() {
   ]
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade-in ${
         isScrolled 
           ? 'bg-white/80 backdrop-blur-md border-b border-neutral-200 dark:bg-neutral-900/80 dark:border-neutral-700' 
           : 'bg-transparent'
@@ -38,23 +35,19 @@ export default function Header() {
     >
       <div className="container-max section-padding">
         <div className="flex items-center justify-between">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-xl font-semibold gradient-text"
-          >
+          <div className="text-xl font-semibold gradient-text hover:scale-105 transition-transform">
             Courtney Buck
-          </motion.div>
+          </div>
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.a
+              <a
                 key={item.name}
                 href={item.href}
-                whileHover={{ y: -2 }}
-                className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors"
+                className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-all hover:-translate-y-0.5"
               >
                 {item.name}
-              </motion.a>
+              </a>
             ))}
           </nav>
 
@@ -83,6 +76,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </motion.header>
+    </header>
   )
 } 
