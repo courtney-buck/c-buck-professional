@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-neutral-900 dark:bg-black text-neutral-400 py-12">
       <div className="container-max section-padding">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-center md:text-left animate-fade-in">
+          <div className="text-center md:text-left">
             <div className="text-xl font-semibold gradient-text mb-2">
               Courtney Buck
             </div>
@@ -12,7 +12,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm animate-fade-in animate-delay-200">
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
             <a
               href="#about"
               className="hover:text-neutral-200 transition-colors"
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-neutral-800 mt-8 pt-8 text-center text-sm animate-fade-in animate-delay-400">
+        <div className="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
           <p>
             © {new Date().getFullYear()} Courtney Buck. All rights reserved.
           </p>

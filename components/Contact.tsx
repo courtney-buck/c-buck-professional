@@ -58,7 +58,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding bg-white dark:bg-neutral-900">
       <div className="container-max">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's Connect
           </h2>
@@ -69,7 +69,7 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Methods */}
-          <div className="space-y-8 animate-fade-in animate-delay-200">
+          <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100">
                 Get in Touch
@@ -127,7 +127,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="animate-fade-in animate-delay-400">
+          <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">

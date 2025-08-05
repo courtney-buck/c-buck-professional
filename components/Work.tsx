@@ -29,7 +29,7 @@ export default function Work() {
   return (
     <section id="work" className="section-padding bg-neutral-50 dark:bg-neutral-800">
       <div className="container-max">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Selected Work
           </h2>
@@ -42,7 +42,7 @@ export default function Work() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`flex flex-col lg:flex-row gap-8 items-center animate-fade-in animate-delay-${(index + 1) * 200} ${
+              className={`flex flex-col lg:flex-row gap-8 items-center ${
                 index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`}
             >
@@ -103,7 +103,7 @@ export default function Work() {
           ))}
         </div>
 
-        <div className="text-center mt-16 animate-fade-in animate-delay-800">
+        <div className="text-center mt-16">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
