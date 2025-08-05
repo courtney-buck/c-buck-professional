@@ -1,7 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
-
 const expertiseAreas = [
   {
     title: 'Strategy & Planning',
@@ -36,30 +32,20 @@ export default function About() {
   return (
     <section id="about" className="section-padding bg-white dark:bg-neutral-900">
       <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             About
           </h2>
           <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
             As a generalist, I thrive in the spaces between disciplines, bringing together diverse perspectives to solve complex problems that require both breadth and depth of understanding.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {expertiseAreas.map((area, index) => (
-            <motion.div
+            <div
               key={area.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="group"
+              className={`group animate-fade-in animate-delay-${(index + 1) * 200}`}
             >
               <div className="bg-neutral-50 dark:bg-neutral-800 p-8 rounded-2xl h-full transition-all duration-300 group-hover:shadow-lg group-hover:bg-neutral-100 dark:group-hover:bg-neutral-700">
                 <div className="text-primary-600 mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -72,17 +58,11 @@ export default function About() {
                   {area.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
+        <div className="mt-16 text-center animate-fade-in animate-delay-600">
           <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-8 rounded-2xl">
             <h3 className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
               What makes a generalist valuable?
@@ -93,7 +73,7 @@ export default function About() {
               We bridge gaps that specialists might miss.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

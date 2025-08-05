@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const contactMethods = [
@@ -59,43 +58,30 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding bg-white dark:bg-neutral-900">
       <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's Connect
           </h2>
           <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
             Ready to tackle complex challenges together? I'm always interested in new opportunities to apply generalist thinking across diverse domains.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Methods */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
+          <div className="space-y-8 animate-fade-in animate-delay-200">
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100">
                 Get in Touch
               </h3>
               <div className="space-y-4">
                 {contactMethods.map((method) => (
-                  <motion.a
+                  <a
                     key={method.name}
                     href={method.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-4 p-4 rounded-lg bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors group"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-all group hover:translate-x-1"
                   >
                     <div className="text-primary-600 group-hover:scale-110 transition-transform">
                       {method.icon}
@@ -108,7 +94,7 @@ export default function Contact() {
                         {method.value}
                       </div>
                     </div>
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>
@@ -138,15 +124,10 @@ export default function Contact() {
                 </li>
               </ul>
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="animate-fade-in animate-delay-400">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
@@ -196,16 +177,14 @@ export default function Contact() {
                 />
               </div>
 
-              <motion.button
+              <button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                className="w-full px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Send Message
-              </motion.button>
+              </button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

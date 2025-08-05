@@ -1,7 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
-
 const projects = [
   {
     title: 'Project Alpha',
@@ -33,30 +29,20 @@ export default function Work() {
   return (
     <section id="work" className="section-padding bg-neutral-50 dark:bg-neutral-800">
       <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Selected Work
           </h2>
           <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
             A selection of projects that demonstrate the breadth and depth of generalist problem-solving across different domains.
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-16">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className={`flex flex-col lg:flex-row gap-8 items-center ${
+              className={`flex flex-col lg:flex-row gap-8 items-center animate-fade-in animate-delay-${(index + 1) * 200} ${
                 index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`}
             >
@@ -106,40 +92,28 @@ export default function Work() {
                   ))}
                 </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
-                >
+                <button className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors hover:scale-105">
                   View Case Study
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </motion.button>
+                </button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <motion.a
+        <div className="text-center mt-16 animate-fade-in animate-delay-800">
+          <a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Let's Work Together
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </motion.a>
-        </motion.div>
+          </a>
+        </div>
       </div>
     </section>
   )
